@@ -5,18 +5,49 @@ import amigosImg from './imagenes/amigos.jpg';
 import calleImg from './imagenes/calle.jpg';
 import trabajoImg from './imagenes/trabajo.jpg';
 import carrosImg from './imagenes/carros.jpg';
+import pesticidaJitomateImg from './imagenes/pesticida_jitomate.jpg';
+import plagasGuayabaImg from './imagenes/plagas_guayaba.jpg';
+import plantaLimonImg from './imagenes/planta_limon.jpg';
+import precaucionesImg from './imagenes/precauciones.jpg';
+import consejosPlagasImg from './imagenes/consejos_plagas.jpg';
 
 function App() {
   const [messages, setMessages] = useState([
-    { text: "Claudia: Desde que era joven, siempre sentí que tenía que complacer a los demás. En mi primera relación, todo parecía perfecto al principio. Mi pareja era encantador, siempre me decía cuánto me quería y lo afortunado que era de tenerme a su lado. Sin embargo, con el tiempo, las cosas cambiaron. Comenzó a criticar mis decisiones, mis amigos, incluso mi apariencia. Recuerdo un día, después de una pelea, que me miró a los ojos y me dijo que era un desastre y que nunca encontraría a alguien mejor que él. Esa fue la primera vez que sentí que mi mundo se desmoronaba. Me aisló de mis amigos y familiares, y cada día que pasaba, sentía que perdía un poco más de mí misma. Al final, entendí que el amor no debería doler y que merecía ser tratada con respeto.", id: Date.now(), sender: 'other', image: tequilaImg },
-    { text: "Ester: Durante años, viví en un ciclo de violencia emocional y física. Mi pareja, al principio, era un príncipe, pero luego se convirtió en mi mayor temor. Las primeras veces que me agredió, me decía que era por mi culpa, que si no hubiera hecho ciertas cosas, no habría tenido que reaccionar así. Esa manipulación me llevó a creer que yo era la responsable de su comportamiento. En ocasiones, me encontraba llorando en la ducha, preguntándome en qué momento perdí el control de mi vida. Finalmente, después de una pelea particularmente intensa, donde me empujó contra la pared, decidí que ya era suficiente. Hice una llamada a un refugio y, con mucho miedo, me escapé. Ahora estoy en un camino de sanación, pero aún llevo las cicatrices de esa relación.", id: Date.now() + 1, sender: 'other', image: amigosImg },
-    { text: "Teresa: Soy madre de dos hijos y, durante años, soporté el abuso verbal de mi esposo. Cada día era una batalla. Él me decía que no era una buena madre, que no sabía cocinar, que no podía hacer nada bien. En un momento dado, sentí que ya no podía más. Decidí buscar ayuda, hablar con otras mujeres que habían pasado por situaciones similares. Ese apoyo me dio la fuerza para dar el primer paso. A veces, pienso en el día en que decidí irme. Fue aterrador, pero sabía que debía proteger a mis hijos de un entorno tóxico. Ahora, estoy reconstruyendo mi vida y enseñando a mis hijos sobre el amor propio y el respeto.", id: Date.now() + 2, sender: 'other', image: calleImg },
-    { text: "Ingrid: Durante años, pensé que el amor era un sacrificio constante. Mi pareja me prometía el mundo, pero con cada promesa incumplida, sentía que mi valor se desvanecía. Las primeras veces que me insultó, creí que eran momentos de frustración, que todo mejoraría. Sin embargo, las palabras hirientes se convirtieron en un ritual diario. Un día, me dijo que nadie me querría jamás si seguía siendo como era. Me sentí atrapada y sola. Decidí buscar ayuda en grupos de apoyo, donde encontré a mujeres que compartían historias similares. Poco a poco, aprendí que merezco amor y respeto, y que salir de esa relación era una forma de amarme a mí misma.", id: Date.now() + 3, sender: 'other', image: trabajoImg },
-    { text: "Fabiola: Crecer en un ambiente violento me dejó marcas profundas. Mi padre era abusivo con mi madre, y de niña, veía cómo ella intentaba complacerlo. Aprendí que el amor a menudo venía con dolor. Cuando comencé a salir, repetí ese patrón. Mi pareja era encantador, pero pronto comenzó a mostrar signos de celos extremos. Cada vez que salía con mis amigas, él me llamaba para preguntarme dónde estaba. Un día, me siguió y me enfrentó, cuestionando cada paso que daba. Me di cuenta de que esta situación no era normal. Con el tiempo, entendí que no quería replicar el ciclo de violencia y decidí romper con él. Fue una decisión difícil, pero necesaria para mi salud mental.", id: Date.now() + 4, sender: 'other', image: carrosImg },
-    { text: "Valeria: La violencia no siempre es física; a veces, el dolor más profundo viene de las palabras. Mi exmarido tenía una forma de manipularme que me hacía dudar de mi propia realidad. Recuerdo una vez que discutimos y me dijo que era una 'madre horrible' por no hacer las cosas a su manera. Esa noche lloré hasta que me quedé dormida, sintiéndome vacía. Tras mucho tiempo en terapia, comprendí que el abuso emocional puede ser igual de devastador. Ahora, estoy aprendiendo a establecer límites y a valorar mi voz. Estoy en un proceso de sanación y empoderamiento que me ha permitido ser más fuerte que nunca.", id: Date.now() + 5, sender: 'other', image: tequilaImg },
-    { text: "Debanih: Mi historia de abuso comenzó cuando tenía 17 años. Al principio, era un romance de ensueño; él era todo lo que había deseado. Pero pronto, los celos se convirtieron en control y me encontré en un ciclo de agresiones y disculpas. La última vez que me golpeó fue durante una discusión en la que simplemente expresé mi opinión. En ese momento, supe que debía salir. Llamé a una línea de ayuda y, con el apoyo de las consejeras, pude encontrar un refugio seguro. Aunque el camino hacia la recuperación ha sido difícil, cada día me siento más fuerte y más capaz de abrazar mi vida sin miedo.", id: Date.now() + 6, sender: 'other', image: amigosImg },
-    { text: "Amanda: Después de años de soportar un matrimonio tóxico, finalmente tomé la decisión de irme. Mi esposo era un maestro del engaño, siempre me hacía sentir que era 'yo' quien tenía el problema. Recuerdo noches en las que me decía que estaba loca por sentirme así. Un día, tras un episodio particularmente violento, miré a mis hijos y supe que tenía que hacer algo. Buscar ayuda fue un proceso que nunca imaginé que haría. Asistí a terapia y empecé a reconstruir mi vida. Hoy, estoy más enfocada en ser un modelo a seguir para mis hijos y mostrarles que el amor no debe doler.", id: Date.now() + 7, sender: 'other', image: calleImg },
-    { text: "Johana: Durante años, me convencí de que el comportamiento de mi pareja era normal. Era el tipo de amor que me hacía dudar de mí misma. Cada vez que él me decía que 'no era suficiente', me sentía pequeña. La última vez que me insultó, sentí un quiebre interno. Me di cuenta de que no podía seguir viviendo así. La decisión de dejarlo fue aterradora, pero necesaria. Me encontré con mujeres que habían pasado por situaciones similares, y juntas nos apoyamos. Ahora sé que el amor es un viaje de respeto mutuo, y estoy en paz conmigo misma, buscando una vida sin miedo.", id: Date.now() + 8, sender: 'other', image: trabajoImg },
+    {
+      title: "Pesticida para plantas de jitomate",
+      text: "Los jitomates son susceptibles a diversas plagas y enfermedades que pueden afectar su crecimiento y producción. Un manejo adecuado del pesticida puede mejorar la salud de las plantas. Se recomienda el uso de pesticidas específicos para jitomate, aplicándolos en las primeras etapas de crecimiento. Recuerda siempre leer las instrucciones y esperar el tiempo de seguridad antes de cosechar.",
+      id: Date.now(),
+      sender: 'other',
+      image: pesticidaJitomateImg,
+    },
+    {
+      title: "Plagas en plantas de guayaba",
+      text: "La guayaba puede verse afectada por plagas como el picudo y las moscas de la fruta. Para prevenir infestaciones, es esencial realizar inspecciones regulares. Mantén el área alrededor de tus plantas limpia y libre de residuos. Si se detecta alguna plaga, utiliza trampas específicas o insecticidas orgánicos para controlarlas de manera efectiva.",
+      id: Date.now() + 1,
+      sender: 'other',
+      image: plagasGuayabaImg,
+    },
+    {
+      title: "Planta de limón",
+      text: "Las plantas de limón son muy valoradas en la jardinería, pero son propensas a plagas como los pulgones y la cochinilla. Asegúrate de mantener la planta bien cuidada y fertilizada. En caso de infestaciones, rocía con una mezcla de agua y jabón biodegradable para eliminar las plagas. Es recomendable realizar podas regulares para promover una mejor circulación de aire.",
+      id: Date.now() + 2,
+      sender: 'other',
+      image: plantaLimonImg,
+    },
+    {
+      title: "Precauciones con el pesticida",
+      text: "El uso de pesticidas debe ser siempre responsable. Usa guantes y mascarilla al aplicar productos químicos para protegerte de su toxicidad. Además, sigue las instrucciones del fabricante al pie de la letra. Es crucial no aplicar pesticidas en días de lluvia y mantener a mascotas y niños alejados del área tratada durante al menos 24 horas.",
+      id: Date.now() + 3,
+      sender: 'other',
+      image: precaucionesImg,
+    },
+    {
+      title: "Consejos sobre plagas",
+      text: "Prevenir es mejor que curar. Mantén tu jardín limpio y revisa tus plantas regularmente para detectar plagas a tiempo. Usa métodos de control biológico, como introducir insectos benéficos que se alimenten de plagas dañinas. Además, considera la rotación de cultivos para reducir la incidencia de plagas específicas en el suelo.",
+      id: Date.now() + 4,
+      sender: 'other',
+      image: consejosPlagasImg,
+    },
   ]);
 
   const [inputValue, setInputValue] = useState('');
@@ -31,6 +62,7 @@ function App() {
   const fileInputRef = useRef(null);
   const menuRef = useRef(null);
   const storyInputRef = useRef(null);
+  const [selectedMessageIndex, setSelectedMessageIndex] = useState(null);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -76,7 +108,29 @@ function App() {
     toggleMenu();
   };
 
-  const filteredMessages = messages.filter((msg) => msg.text.toLowerCase().includes(searchTerm.toLowerCase()));
+  const handlePesticidaClick = () => {
+    setSelectedMessageIndex(0); // Mostrar solo el primer mensaje
+  };
+
+  const handlePlagaClick = () => {
+    setSelectedMessageIndex(1); // Mostrar solo el segundo mensaje
+  };
+
+  const handlePlantaClick = () => {
+    setSelectedMessageIndex(2); // Mostrar solo el tercer mensaje
+  };
+
+  const handlePrecaucionClick = () => {
+    setSelectedMessageIndex(3); // Mostrar solo el cuarto mensaje
+  };
+
+  const handleConsejosClick = () => {
+    setSelectedMessageIndex(4); // Mostrar solo el quinto mensaje
+  };
+
+  const filteredMessages = selectedMessageIndex !== null
+    ? [messages[selectedMessageIndex]] // Mostrar solo el mensaje seleccionado
+    : messages.filter((msg) => msg.text.toLowerCase().includes(searchTerm.toLowerCase())); // Todos los mensajes
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -101,26 +155,31 @@ function App() {
 
   return (
     <div className="App">
+      <div className="sidebar">
+        <button className="sidebar-button" onClick={handlePesticidaClick}>Pesticida</button>
+        <button className="sidebar-button" onClick={handlePlagaClick}>Plaga</button>
+        <button className="sidebar-button" onClick={handlePlantaClick}>Plantas</button>
+        <button className="sidebar-button" onClick={handlePrecaucionClick}>Precaución</button>
+        <button className="sidebar-button" onClick={handleConsejosClick}>Consejos</button> {/* Quinto botón */}
+        <button className="sidebar-button">Configuracion</button>
+        <button className="sidebar-button">Mas</button>
+      </div>
       <div className="chat-window">
         <div className="header">
           <div className="contact-info">
             <div className="user-info">
-              <h2>Foro seguro</h2>
-              <div className="online-status">20 integrantes en Aguascalientes</div>
+              <h2 style={{ flex: 1, textAlign: 'center' }}>Aprender más</h2>
             </div>
           </div>
           <button onClick={toggleMenu} className="menu-button">☰</button>
           {menuOpen && (
             <div className="menu" ref={menuRef}>
-              <button onClick={handleCountStoryClick}>Contar mi historia</button>
-              <button onClick={toggleForum}>
-                {isForumActive ? 'Salir del foro' : 'Regresar al foro'}
-              </button>
-              <input 
-                type="text" 
-                placeholder="Buscar mensajes" 
-                value={searchTerm} 
-                onChange={(e) => setSearchTerm(e.target.value)} 
+              <button onClick={handleCountStoryClick}>Notas</button>
+              <input
+                type="text"
+                placeholder="Buscar"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
               />
             </div>
@@ -130,15 +189,11 @@ function App() {
           <div className="messages">
             {filteredMessages.map((msg) => (
               <div key={msg.id} className={`message ${msg.sender}`}>
+                <h3 className="message-title">{msg.title}</h3>
                 <p>{msg.text}</p>
                 {msg.image && (
                   <div>
                     <img src={msg.image} alt="Mensaje visual" className="message-image" />
-                    <div className="action-buttons">
-                      <button className="like-button">👍</button>
-                      <button className="comment-button">💬</button>
-                      <button className="share-button">🔗</button>
-                    </div>
                   </div>
                 )}
               </div>

@@ -4,27 +4,59 @@
 
 .App {
   font-family: Arial, sans-serif;
-  background-color: #3e005b;
+  background-color: #f9dcc2;
   height: 100vh;
   display: flex;
+}
+
+.sidebar {
+  width: 100px; /* Ajusta el ancho de la barra lateral */
+  background-color: #035600b7; /* Color de fondo de la barra lateral */
+  display: flex;
   flex-direction: column;
-  color: #ccc;
-  text-align: justify;
+  padding: 5px;
+  margin-top: 64px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-button {
+  margin: 10px 0;
+  padding: 15px; /* Aumenta el padding para más tamaño */
+  background-color: #e0e0e0; /* Color de los botones de la barra lateral */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center; /* Centra el texto */
+  font-size: 14px; /* Ajusta el tamaño de la fuente */
+  width: 100%; /* Hace que los botones ocupen todo el ancho */
+  display: flex; /* Usar flex para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.sidebar-button:hover {
+  background-color: #c0c0c0; /* Color al pasar el ratón */
 }
 
 .chat-window {
+  flex: 1; /* La ventana del chat ocupa el resto del espacio */
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 .header {
-  background-color: #c669ff;
+  background-color: #035600b7;
   color: white;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%; /* Hace que la cabecera ocupe todo el ancho */
+  position: fixed; /* Mantiene la cabecera en la parte superior */
+  top: 0; /* Ajusta a la parte superior */
+  left: 0; /* Alinea a la izquierda */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
 
 .chat-container {
@@ -32,15 +64,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin-top: 63px; /* Ajusta el margen superior para que no se superponga con la cabecera */
+  margin-bottom: 60px; /* Agrega margen inferior para la barra de mensajes */
 }
 
 .messages {
   flex: 1;
   overflow-y: auto;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los mensajes */
+  align-items: center;
 }
 
 .message {
@@ -51,73 +85,66 @@
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el contenido de cada mensaje */
+  align-items: center;
 }
 
 .message.me {
-  background-color: #5b007f;
+  background-color: #10a40bb7;
   align-self: center;
   text-align: center;
-  width: 305%;
-  height: 250%;
 }
 
 .message.other {
-  background-color: #5b007f;
+  background-color: #10990bb7;
   align-self: center;
   text-align: center;
-  width: 70%;
-  height: 250%;
-   text-align: justify;
+  width: 67770%;
 }
 
 .message-image {
-  width: 100%; /* Ajusta el ancho al 100% del contenedor */
-  height: 100%; /* Mantiene la proporción */
-  max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+  width: 100%;
+  max-width: 800px;
   display: block;
-  margin: 10px 0; /* Margen vertical para separar la imagen */
-  object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
+  margin: 10px 0;
+  object-fit: cover;
 }
 
 .message-form {
+  background-color: #035600b7;
+  color: white;
+  padding: 10px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  width: 100%;
+  justify-content: space-between;
+  position: fixed; /* Mantiene la barra en la parte inferior */
+  bottom: 0; /* Alinea a la parte inferior */
+  left: 0; /* Alinea a la izquierda */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  width: 100%; /* Ocupa todo el ancho */
 }
 
 .message-input {
   flex: 1;
   padding: 10px;
   border: 1px solid #ff69b4;
+  width: 50%;
   border-radius: 5px;
   margin-right: 10px;
-  width: 100%; /* Ajusta este valor según el ancho del botón enviar */
 }
 
 .send-button {
   padding: 10px 15px;
   border: none;
-  background-color: #9c27b0; /* Color morado brillante */
+  background-color: #9c27b0;
   color: white;
   border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-}
-
-.send-button:hover {
-  background-color: #7b1fa2; /* Morado más oscuro al pasar el mouse */
-  transform: scale(1.05);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  transition: background-color 0.3s;
 }
 
 .blocked-message {
-  background-color: rgb(161, 0, 142);
+  background-color: rgb(0, 105, 7);
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -126,107 +153,70 @@
 }
 
 .camera-button {
-  background-color: transparent; 
-  border: none; 
-  font-size: 24px; 
-  cursor: pointer; 
-  margin-right: 10px; 
-}
-
-.camera-button:hover {
-  transform: scale(1.1); 
-  transition: transform 0.2s; 
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .hidden-input {
   display: none; /* Oculta el input de archivo */
 }
 
-/* Estilos para los botones de acción */
-.action-buttons {
-  display: flex;
-  justify-content: center; /* Centra los botones de acción */
-  padding: 5px 0;
-  width: 100%;
-  background-color: #49016f;
-}
-
-.like-button,
-.comment-button,
-.share-button {
-  padding: 10px; /* Añadir padding para que se vean más grandes */
-  background-color: #9c27b0; /* Color morado brillante */
-  border: none;
-  color: white;
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer;
-  font-size: 20px; /* Ajusta el tamaño según lo necesites */
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.like-button:hover,
-.comment-button:hover,
-.share-button:hover {
-  background-color: #7b1fa2; /* Morado más oscuro al pasar el mouse */
-  transform: scale(1.05);
-}
-
-.like-button {
-  margin-right: 10px;
-}
-
-.comment-button {
-  margin: 0 10px;
-}
-
-.share-button {
-  margin-left: 10px;
-}
-
 /* Estilos para el menú */
 .menu {
-  position: absolute; /* Para que el menú se posicione correctamente */
+  position: absolute;
   top: 60px; /* Ajusta según la altura de tu encabezado */
-  right: 10px; /* Ajusta según tu diseño */
-  background-color: rgb(202, 115, 239); /* Color de fondo del menú */
-  border: 1px solid #ccc; /* Borde del menú */
-  border-radius: 5px; /* Esquinas redondeadas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
-  z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+  right: 10px;
+  background-color: rgb(0, 105, 7);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 50%;
 }
 
-/* Estilos para los botones del menú */
+.search-input {
+  width: 100%;
+}
+
 .menu button {
-  background-color: #9c27b0; /* Color morado brillante */
+  background-color: rgb(0, 105, 7);
   color: rgb(255, 255, 255);
   border: none;
-  padding: 10px 15px; /* Añadir padding */
-  border-radius: 25px; /* Bordes redondeados */
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-  margin: 5px 0; /* Margen para separación */
-  width: 100%; /* Botones ocupan el ancho completo */
+  transition: background-color 0.3s;
+  width: 100%; /* Hace que los botones ocupen todo el ancho */
 }
 
 .menu button:hover {
-  background-color: #7b1fa2; /* Morado más oscuro al pasar el mouse */
-  transform: scale(1.05);
+  background-color: #098d05b7; /* Color al pasar el ratón */
 }
 
-/* Estilo para el botón de menú (tres rayitas) */
+/* Estilo para el botón de menú */
 .menu-button {
-  background-color: #9c27b0; /* Color morado brillante */
-  color: rgb(204, 88, 233);
+  background-color: #035600b7;
+  color: rgb(255, 255, 255);
   border: none;
-  padding: 10px 15px; /* Añadir padding */
-  border-radius: 25px; /* Bordes redondeados */
+  padding: 10px 15px;
+  border-radius: 25px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s;
 }
 
 .menu-button:hover {
-  background-color: #7b1fa2; /* Morado más oscuro al pasar el mouse */
-  transform: scale(1.05);
+  background-color: #098d05b7;
+}
+
+.message-title {
+  font-size: 1.5em; /* Tamaño del texto más grande */
+  font-weight: bold; /* Negrita */
+  color: #fff; /* Color blanco para contraste */
+  background-color: #035600b7; /* Fondo oscuro */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-bottom: 10px; /* Espacio entre el título y el texto */
 }
